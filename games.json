@@ -1,0 +1,76 @@
+{
+  "games": [
+    {
+      "id": "M1",
+      "name": "猜拳神廟冒險",
+      "subtitle": "Rock Paper Scissors · Temple Adventure",
+      "folder": "M1_RockPaperScissorsTempleAdventure",
+      "url": "./M1_RockPaperScissorsTempleAdventure/web-mobile/index.html",
+      "available": true
+    },
+    {
+      "id": "M2",
+      "name": "星隕財富",
+      "subtitle": "Asteroid Riches",
+      "folder": "M2_AsteroidRiches",
+      "url": "./M2_AsteroidRiches/web-mobile/index.html",
+      "available": true
+    },
+    {
+      "id": "M3",
+      "name": "香腸對決",
+      "subtitle": "Sausage Duel",
+      "folder": "M3_SausageDuel",
+      "url": "./M3_SausageDuel/web-mobile/index.html",
+      "available": true
+    },
+    {
+      "id": "M4",
+      "name": "賽博高低對決",
+      "subtitle": "Cyber Hi-Lo Battle",
+      "folder": "M4_CyberHi-LoBattle",
+      "url": "./M4_CyberHi-LoBattle/web-mobile/index.html",
+      "available": true
+    },
+    {
+      "id": "M5",
+      "name": "五行鳳凰",
+      "subtitle": "Phoenix of Five Elemental Orbs",
+      "folder": "M5_PhoenixOfFiveElementalOrbs",
+      "url": "./M5_PhoenixOfFiveElementalOrbs/web-mobile/index.html",
+      "available": true
+    },
+    {
+      "id": "M6",
+      "name": "霓虹擲幣",
+      "subtitle": "Neon Coin Flip",
+      "folder": "M6_NeonCoinFlip",
+      "url": "./M6_NeonCoinFlip/web-mobile/index.html",
+      "available": true
+    },
+    {
+      "id": "M7",
+      "name": "神秘球馬戲團",
+      "subtitle": "Mystery Balls Circus",
+      "folder": "M7_MysteryBallsCircus",
+      "url": "./M7_MysteryBallsCircus/web-mobile/index.html",
+      "available": true
+    },
+    {
+      "id": "M9",
+      "name": "香蕉拉霸",
+      "subtitle": "Banana Pull Tabs",
+      "folder": "M9_BananaPullTabs",
+      "url": "./M9_BananaPullTabs/web-mobile/index.html",
+      "available": true
+    },
+    {
+      "id": "SI8",
+      "name": "崩盤市場",
+      "subtitle": "Crash Market",
+      "folder": "Si8_CrashMarket",
+      "url": "./Si8_CrashMarket/web-mobile/index.html",
+      "available": true
+    }
+  ]
+}

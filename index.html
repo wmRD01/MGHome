@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f4f5ee">
+  <meta name="description" content="你的 Cocos 遊戲大廳。點選遊戲頁簽，直達下一場冒險。">
+  <title>Cocos Play｜遊戲大廳</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%23283c2e'/%3E%3Cpath d='M26 18 45 32 26 46Z' fill='%23dbf396'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./game-art.js" defer></script>
+  <script src="./launcher.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#game-library">跳至遊戲入口</a>
+  <header class="site-header" id="site-header">
+    <div class="header-main content-width">
+      <a class="brand" href="./" aria-label="Cocos Play 遊戲大廳">
+        <span class="brand-icon" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="m12 8 12 8-12 8Z" fill="currentColor"/></svg></span>
+        <span>cocos<span class="brand-light">play</span><span class="brand-period">.</span></span>
+      </a>
+      <div class="header-right"><span class="header-label">我的遊戲庫</span><span class="service-status" id="service-status" role="status"><i aria-hidden="true"></i><span id="service-label">正在載入</span></span></div>
+    </div>
+    <nav class="game-nav content-width" aria-label="遊戲入口頁簽">
+      <button class="nav-arrow" id="tabs-prev" type="button" aria-label="向左捲動遊戲頁簽" disabled><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m12 5-5 5 5 5"/></svg></button>
+      <div class="game-tabs" id="game-tabs" aria-label="拖曳或點選遊戲頁簽"><span class="tabs-placeholder">正在載入遊戲頁簽…</span></div>
+      <button class="nav-arrow" id="tabs-next" type="button" aria-label="向右捲動遊戲頁簽" disabled><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m8 5 5 5-5 5"/></svg></button>
+    </nav>
+  </header>
+  <div class="page-shell content-width">
+    <main>
+      <section class="intro" aria-labelledby="page-title">
+        <div><div class="eyebrow"><span></span> YOUR NEXT ADVENTURE</div><h1 id="page-title">挑一款，開始冒險<span>。</span></h1><p>點選上方頁簽，直達想玩的入口。</p></div>
+        <div class="library-count"><span id="game-count">—</span><div>款遊戲<br><strong>等你探索</strong></div></div>
+      </section>
+      <div class="notice" id="notice" role="status" hidden><span id="notice-message"></span><button id="retry-button" type="button">重新載入 <span aria-hidden="true">↻</span></button></div>
+      <div class="section-label"><h2 id="library-title">遊戲大廳</h2><span>全部遊戲 <span class="label-number" id="library-count">—</span><span class="section-divider">/</span>拖曳頁簽，探索更多</span></div>
+      <div id="game-library" class="game-library" aria-labelledby="library-title" aria-busy="true" tabindex="-1"><div class="library-loading" id="library-loading" role="status"><span class="loading-dot"></span>正在整理你的遊戲庫…</div></div>
+      <noscript><p class="notice">請啟用瀏覽器的 JavaScript，載入遊戲入口。</p></noscript>
+      <div class="below-library"><span>選好遊戲，就讓冒險開始。</span><a href="#page-title" id="back-to-top">回到最上方 <span aria-hidden="true">↑</span></a></div>
+    </main>
+    <footer><span>COCOS PLAY <span class="footer-divider">/</span> 你的遊戲大廳</span><span>MADE FOR PLAY.</span></footer>
+  </div>
+  <template id="game-card-template">
+    <article class="game-card" tabindex="-1">
+      <div class="game-content">
+        <div class="game-kicker"><span class="game-id"></span><span class="game-eyebrow"></span></div>
+        <h2 class="game-title"></h2>
+        <p class="english-title"></p>
+        <p class="game-description"></p>
+        <div class="game-actions"><a class="launch-button is-disabled" target="_blank" rel="noopener" aria-disabled="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 11 7-11 7Z" fill="currentColor"/></svg><span class="launch-label">確認遊戲中</span><span class="button-arrow" aria-hidden="true">↗</span></a><span class="launch-note">在新分頁開啟<br>隨時回來選遊戲</span></div>
+        <div class="game-tags"><span class="genre-tag"></span><span class="availability-tag">確認中</span></div>
+      </div>
+      <div class="game-art" aria-hidden="true"></div>
+    </article>
+  </template>
+  <template id="m1-art-template">
+          <span class="art-grid"></span><span class="art-orbit orbit-one"></span><span class="art-orbit orbit-two"></span>
+          <svg class="temple-art" viewBox="0 0 600 520" fill="none">
+            <defs>
+              <linearGradient id="stone" x1="100" y1="120" x2="480" y2="500" gradientUnits="userSpaceOnUse"><stop stop-color="#8eaa6b"/><stop offset="1" stop-color="#3e6346"/></linearGradient>
+              <linearGradient id="door" x1="300" y1="248" x2="300" y2="407" gradientUnits="userSpaceOnUse"><stop stop-color="#e6f5a3"/><stop offset="1" stop-color="#a5cb6e"/></linearGradient>
+              <linearGradient id="step" x1="150" y1="365" x2="390" y2="440" gradientUnits="userSpaceOnUse"><stop stop-color="#a4bc7e"/><stop offset="1" stop-color="#658b59"/></linearGradient>
+              <radialGradient id="glow"><stop stop-color="#d7ec8d" stop-opacity=".24"/><stop offset="1" stop-color="#d7ec8d" stop-opacity="0"/></radialGradient>
+            </defs>
+            <circle cx="305" cy="266" r="212" fill="url(#glow)"/>
+            <ellipse cx="302" cy="446" rx="222" ry="26" fill="#0e281e" opacity=".45"/>
+            <path d="m145 370 158-72 157 72v44l-157 76-158-76Z" fill="#36573e"/>
+            <path d="m145 370 158-72 157 72-157 76Z" fill="#73985b"/>
+            <path d="M181 278 301 222l123 56v102l-121 59-122-59Z" fill="#476d47"/>
+            <path d="m181 278 122 56v105l-122-59Z" fill="#577c4f"/>
+            <path d="m303 334 121-56v102l-121 59Z" fill="#35573d"/>
+            <path d="m181 278 120-56 123 56-121 56Z" fill="#97b579"/>
+            <path d="M217 188 301 149l86 39v116l-84 40-86-40Z" fill="url(#stone)"/>
+            <path d="m303 227 84-39v116l-84 40Z" fill="#456b46"/>
+            <path d="m217 188 84-39 86 39-84 39Z" fill="#a4bc81"/>
+            <path d="m209 183 92-43 94 43v17l-92 44-94-44Z" fill="#688e57"/>
+            <path d="m209 183 92-43 94 43-92 44Z" fill="#b5c88c"/>
+            <path d="m238 127 63-30 64 30v62l-62 30-65-30Z" fill="#8cab6b"/>
+            <path d="m303 158 62-31v62l-62 30Z" fill="#5d8553"/>
+            <path d="m230 121 71-33 72 33v15l-70 34-73-34Z" fill="#92ac71"/>
+            <path d="m230 121 71-33 72 33-70 34Z" fill="#bfd397"/>
+            <path d="M278 198v-47l25 12 26-12v47l-26 13Z" fill="#34563c"/>
+            <path d="m261 249 42-19 42 19v97l-42 20-42-20Z" fill="#243e2d"/>
+            <path d="m274 256 29-13 29 13v84l-29 14-29-14Z" fill="url(#door)"/>
+            <path d="m303 243 29 13v84l-29 14Z" fill="#d9ed9a"/>
+            <path d="m261 249 42 20 42-20M303 269v84" stroke="#f1f8c7" stroke-opacity=".35"/>
+            <path d="m264 345 39-18 39 18-39 19Z" fill="#dae6a6"/>
+            <path d="m264 345 39 19 39-19v12l-39 19-39-19Z" fill="#9fbc77"/>
+            <path d="m251 362 52-24 52 24-52 25Z" fill="#c9d99a"/>
+            <path d="m251 362 52 25 52-25v13l-52 25-52-25Z" fill="#86a969"/>
+            <path d="m235 381 68-32 68 32-68 32Z" fill="#bbcf8c"/>
+            <path d="m235 381 68 32 68-32v13l-68 33-68-33Z" fill="#7b9e61"/>
+            <path d="m218 402 85-40 85 40-85 41Z" fill="url(#step)"/>
+            <path d="m218 402 85 41 85-41v13l-85 41-85-41Z" fill="#719459"/>
+            <path d="m202 424 101-47 102 47-102 49Z" fill="#a8c17f"/>
+            <path d="m202 424 101 49 102-49v13l-102 49-101-49Z" fill="#60854f"/>
+            <path d="M223 211v40l22 10v-40M365 214v38l-13 6M194 294v29l20 9M407 297v28l-17 8" stroke="#c4d29a" stroke-opacity=".3" stroke-width="3"/>
+            <path d="M242 137v28l13 6M349 142v22l-10 5" stroke="#d1dfa6" stroke-opacity=".45" stroke-width="3"/>
+            <path d="M187 376c-35-55-57-25-55-15 20-7 26 1 37 18-27-22-45-4-41 3 18-4 28-2 42 9" fill="#80a866"/>
+            <path d="M428 397c37-55 52-23 47-13-20-9-26 1-36 17 27-21 46-2 41 7-20-7-30-3-44 5" fill="#709b57"/>
+            <path d="M160 424c-8-21-29-29-32-16 11-2 16 4 23 15-18-9-32 1-24 10 12-7 18-4 31-1" fill="#a7bd73"/>
+            <path d="m403 150 4-12 4 12 12 4-12 4-4 12-4-12-12-4Z" fill="#e1ef9d"/>
+            <path d="m176 244 3-8 3 8 8 3-8 3-3 8-3-8-8-3Z" fill="#bbd48a"/>
+            <circle cx="402" cy="265" r="3" fill="#d9ec98"/><circle cx="210" cy="105" r="3" fill="#d9ec98"/><circle cx="450" cy="331" r="2" fill="#d9ec98"/>
+          </svg>
+          <span class="hand-token token-rock"><svg viewBox="0 0 40 40"><path d="m12 27-4-7 4-10 5-2 4 2 5-1 6 7-1 10-7 6-8-1Z"/><path d="m12 18 6-2 4 2 4-1m-9-7 1 6m8-7-1 8m-11 8 4 2 6-1"/></svg><span>石頭</span></span>
+          <span class="hand-token token-scissors"><svg viewBox="0 0 40 40"><path d="M16 22 10 9c-1-4 3-5 5-1l6 11 2-13c1-4 5-3 5 1l-1 15 5 2-1 9-8 3-10-4-4-8c-2-4 1-6 4-3l4 4"/></svg><span>剪刀</span></span>
+          <span class="hand-token token-paper"><svg viewBox="0 0 40 40"><path d="M12 24 8 15c-2-4 2-6 4-2l4 7-3-13c-1-4 3-5 4-1l4 13-1-14c0-4 4-4 4 0l1 14 2-10c1-4 5-3 4 1l-1 15 4-5c2-3 5-1 3 2l-7 12-9 2-7-6Z"/></svg><span>布</span></span>
+          <span class="art-caption">A LITTLE CHOICE.<br>A GRAND ADVENTURE.</span><span class="art-edition">ADVENTURE SERIES — 001</span></template>
+</body>
+</html>

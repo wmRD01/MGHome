@@ -1,0 +1,52 @@
+Cocos Play 遊戲大廳
+
+GitHub Pages 發布
+1. 將 Home 專案的檔案推送到 GitHub 儲存庫的發布分支。
+2. 在 GitHub 選擇 Settings → Pages → Deploy from a branch，選擇發布分支及 /(root)，按 Save。
+3. 發布完成後，分享 Pages 顯示的網址。使用者在瀏覽器點選遊戲就能開啟。
+4. 新增、移除或改名遊戲資料夾後，在專案內執行 node server.cjs --export-games，並一起提交更新後的 games.json。
+
+遊戲需保留完整的 web-mobile 資料夾。遊戲原有的後端或網路需求仍須具備。
+
+本機啟動方式
+1. 雙擊此資料夾內的 StartLauncher.cmd。
+2. 瀏覽器會自動開啟 http://127.0.0.1:8090/。
+3. 點選頂端遊戲頁簽，頁面會移到對應入口。
+4. 按「開始遊戲」，以新分頁開啟遊戲。
+5. 遊玩時請保留啟動視窗；關閉視窗即可停止本服務。
+
+檔案位置
+請將本入口檔案與遊戲資料夾放在一起，例如：
+  Home\StartLauncher.cmd
+  Home\server.cjs
+  Home\index.html
+  Home\M1_RockPaperScissorsTempleAdventure\web-mobile\index.html
+程式以 server.cjs 所在資料夾為根目錄，自動索引 ./各遊戲資料夾/web-mobile/index.html。
+整個 Home 資料夾可以一起搬移或傳送給別人。
+
+傳送給其他人
+請傳送完整的 Home 資料夾，保留入口檔案及各遊戲的 web-mobile 完整內容。
+對方使用 64 位元 Windows，雙擊 StartLauncher.cmd 即可。
+啟動檔會先使用電腦現有的 Node.js 22 以上版本，或本資料夾 runtime\node.exe。
+若找不到合適版本，會從 Node.js 官網下載最新 Windows LTS 可攜版至本資料夾的 runtime。
+下載後會比對官網 SHA256 檢查碼，驗證成功才使用。
+首次需要下載時須有網路；下載成功後，可重複使用本地 runtime，不必再次下載。
+不執行全域安裝，不修改系統 PATH、登錄檔或 PowerShell 執行原則，不需要管理員權限。
+如下載失敗，會顯示錯誤並停止；請確認能連線至 https://nodejs.org 後再試。
+遊戲原有的後端／網路需求仍須具備；此入口不會額外提供那些服務。
+
+可選的 CMD 指令
+  StartLauncher.cmd --check
+    只檢查是否有合適 Node.js，不下載、不啟動網站。
+  StartLauncher.cmd --prepare-runtime
+    準備本資料夾的可攜 Node.js，不啟動網站。
+    可先執行此指令，再把含 runtime 的整個資料夾傳給其他人。
+    傳送對象若是不同處理器架構，可能需要重新下載對應版本。
+
+連接埠
+預設只使用本機 127.0.0.1:8090，不探測其他連接埠。
+如果 8090 已被占用，啟動會顯示錯誤並停止；不會關閉其他程式。
+請勿重複啟動；如已啟動本服務，可直接在瀏覽器開啟上述網址。
+
+本入口只讀取遊戲建置檔，不修改原遊戲，也不修改系統網路設定。
+請透過啟動檔開啟，不要直接雙擊 index.html。
