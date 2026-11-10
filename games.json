@@ -57,6 +57,14 @@
       "available": true
     },
     {
+      "id": "M8",
+      "name": "寶藏探險",
+      "subtitle": "Treasure Quest",
+      "folder": "M8_Treasure Quest",
+      "url": "./M8_Treasure%20Quest/web-mobile/index.html",
+      "available": true
+    },
+    {
       "id": "M9",
       "name": "香蕉拉霸",
       "subtitle": "Banana Pull Tabs",
