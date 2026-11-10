@@ -1,8 +1,7 @@
 {
-  "games": [
-    {
+  "games": [{
       "id": "M1",
-      "name": "猜拳神廟冒險",
+      "name": "MAA",
       "subtitle": "Rock Paper Scissors · Temple Adventure",
       "folder": "M1_RockPaperScissorsTempleAdventure",
       "url": "./M1_RockPaperScissorsTempleAdventure/web-mobile/index.html",
